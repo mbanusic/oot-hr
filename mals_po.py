@@ -15,11 +15,12 @@
 
 <orig dir> holds Pack/ZsDic.pack.zs and Mals/ as in the game's RomFS. Control codes in the text are written as
 {{g.t:hex}} (tag with parameters), {{g.t}} (tag without), {{/g.t}} (closing tag): keep them as they are, move
-them with the words they belong to. A msgstr of {{empty}} makes the text empty (English articles, which Croatian does not have). Needs Python 3.14 (compression.zstd).
+them with the words they belong to. A msgstr of {{empty}} makes the text empty (English articles, which Croatian does not have). Needs Python 3.14 (compression.zstd), or 3.13 with backports.zstd.
 """
 import argparse, re, struct, sys
 from pathlib import Path
-from compression import zstd
+try: from compression import zstd   # Python 3.14
+except ImportError: from backports import zstd   # 3.13 with backports.zstd, as NX2Apple bundles it
 
 # ---------- SARC ----------
 def sarc_read(b):
