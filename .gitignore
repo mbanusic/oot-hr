@@ -1,0 +1,14 @@
+# game data and anything built from it
+orig/
+overlay/
+*.po
+*.sarc.zs
+# working files of the translation workflow (contain the game's English text)
+workflow/in/
+workflow/out/
+workflow/out_haiku/
+workflow/review/
+workflow/fix/
+workflow/map.json
+workflow/*.json
+__pycache__/
