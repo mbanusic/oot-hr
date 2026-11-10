@@ -1,0 +1,4 @@
+{
+  "needs": ["Pack/ZsDic.pack.zs", "Mals"],
+  "build": ["mals_po.py", "build", "{game}", "EUen", "hr.json", "{out}", "--as", "USen", "--as", "EUen"]
+}

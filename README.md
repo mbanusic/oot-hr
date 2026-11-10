@@ -25,7 +25,7 @@ Known limits:
 
 ## Requirements
 
-- Python 3.14 or newer (for its built-in zstd: `brew install python@3.14`).
+- Python 3.14 or newer (for its built-in zstd: `brew install python@3.14`), or Python 3.13 with `pip install backports.zstd`.
 - The game's RomFS from your own copy, unpacked, or at least these two parts of it:
   - `Pack/ZsDic.pack.zs`
   - `Mals/` (the `*.Product.*.sarc.zs` message archives)
@@ -40,6 +40,10 @@ python3.14 mals_po.py build orig EUen hr.json overlay --as USen --as EUen
 ```
 
 This writes `overlay/Mals/USen.Product.110.sarc.zs` and `overlay/Mals/EUen.Product.110.sarc.zs`. Both are the same Croatian archive, under the two English names, so it is used whether the game runs as American or British English.
+
+## Build it in NX2Apple
+
+`nx2apple-mod.json` lets the [NX2Apple](https://github.com/LNPANDY/NX2Apple) launcher build the translation from your game for you (LNPANDY/NX2Apple#1133, not in a release yet). Put this repository's folder in the game's mods folder (Launch options › Mods › Open mods folder), click Build, then switch the mod on.
 
 ## Play it
 
